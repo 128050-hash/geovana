@@ -1,0 +1,22 @@
+<?php
+$host = "sql301.infinityfree.com";
+$banco = "if0_43427784_meu_banco";
+$usuario = "if0_43427784";
+$senha = "QgWNgjsIhDNnV";
+
+try {
+    $conexao = new PDO(
+        "mysql:host=$host;dbname=$banco;charset=utf8",
+        $usuario,
+        $senha
+    );
+
+    $conexao->setAttribute(
+        PDO::ATTR_ERRMODE,
+        PDO::ERRMODE_EXCEPTION
+    );
+
+} catch (PDOException $e) {
+    die("Erro na conexão: " . $e->getMessage());
+}
+?>
